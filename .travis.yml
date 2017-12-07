@@ -21,7 +21,7 @@ before_install:
 install:
   - find /srv/salt/states
   # Stand up the instance
-  - sudo salt-call --local state.highstate
+  - sudo salt-call --local --retcode-passthrough state.highstate
 
   # If anything bad happened on restarting the minion,
   # we'll want to see the logs
