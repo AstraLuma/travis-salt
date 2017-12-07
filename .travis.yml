@@ -15,6 +15,7 @@ before_install:
   - curl -L http://bootstrap.saltstack.org | sudo sh -s -- -M -X stable $SALTVERSION
   # Set up our installation bits
   - sudo cp minion.bootstrap /etc/salt/minion
+  - sudo mkdir -p /srv/salt/states
   - sudo cp -r states /srv/salt/states
 
 install:
