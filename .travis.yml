@@ -12,7 +12,7 @@ env:
 before_install:
   - sudo apt-get update
   # Install salt minion for local use
-  - curl -L http://bootstrap.saltstack.org | sudo sh -s -- stable $SALTVERSION -M -X
+  - curl -L http://bootstrap.saltstack.org | sudo sh -s -- -M -X stable $SALTVERSION
   # Set up our installation bits
   - sudo cp minion.bootstrap /etc/salt/minion
   - sudo cp -r states /srv/salt/states
