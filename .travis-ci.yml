@@ -1,0 +1,33 @@
+language: python
+sudo: yes
+python:
+#- '3.4'
+#- '3.5'
+- '3.6'
+
+env:
+- SALTVERSION=2016.11
+- SALTVERSION=2017.7
+
+before_install:
+  - sudo apt-get update
+  # Install salt minion for local use
+  - curl -L http://bootstrap.saltstack.org | sudo sh -s -- stable $SALTVERSION -M -X
+  # Set up our installation bits
+  - sudo cp minion.bootstrap /etc/salt/minion
+  - sudo cp -r states /srv/salt/states
+
+install:
+  # Stand up the instance
+  - sudo salt-call --local state.highstate
+
+  # If anything bad happened on restarting the minion,
+  # we'll want to see the logs
+  #- sudo cat /var/log/salt/*
+
+  # For additional debugging, see what's in grains on a travis box
+  - sudo salt '*' grains.items
+
+script:
+  # TODO: Fill in your actual test suite
+  - sudo salt '*' test.ping
