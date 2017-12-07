@@ -19,6 +19,7 @@ before_install:
   - sudo cp -r states /srv/salt/states
 
 install:
+  - find /srv/salt/states
   # Stand up the instance
   - sudo salt-call --local state.highstate
 
