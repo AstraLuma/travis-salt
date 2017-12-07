@@ -27,8 +27,9 @@ install:
   #- sudo cat /var/log/salt/*
 
   # For additional debugging, see what's in grains on a travis box
-  - sudo salt '*' grains.items
+  # - sudo salt '*' grains.items
 
 script:
   # TODO: Fill in your actual test suite
-  - sudo salt '*' test.ping
+  - cat /tmp/test
+  # - sudo salt '*' test.ping
