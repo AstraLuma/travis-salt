@@ -16,7 +16,7 @@ before_install:
   # Set up our installation bits
   - sudo cp minion.bootstrap /etc/salt/minion
   - sudo mkdir -p /srv/salt/states
-  - sudo cp -r states /srv/salt/states
+  - sudo cp -r states/* /srv/salt/states
 
 install:
   - find /srv/salt/states
