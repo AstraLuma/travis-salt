@@ -22,6 +22,7 @@ install:
   - find /srv/salt/states
   # Stand up the instance
   - sudo salt-call --local --retcode-passthrough state.highstate
+  - sudo salt-key -a lively
 
   # If anything bad happened on restarting the minion,
   # we'll want to see the logs
