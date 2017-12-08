@@ -32,5 +32,5 @@ install:
 
 script:
   # TODO: Fill in your actual test suite
-  - cat /tmp/test
+  - sudo salt-run salt.cmd test.versions_report
   # - sudo salt '*' test.ping
