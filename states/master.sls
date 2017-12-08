@@ -20,3 +20,9 @@ ssl-cert:
               - '@wheel'
               - '@runner'
               - '@jobs'
+
+salt-master:
+  service.running:
+    - enable: True
+    - watch:
+      - file: /etc/salt/master.d/travis.conf
