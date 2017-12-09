@@ -24,7 +24,7 @@ install:
   - sudo salt-call --local --retcode-passthrough state.highstate
   - sudo salt-key -L
   - ps aux|cat -
-  - cat /var/log/salt/minion
+  - sudo cat /var/log/salt/minion
   - sudo salt-key -a lively
 
   # If anything bad happened on restarting the minion,
