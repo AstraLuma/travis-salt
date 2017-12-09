@@ -23,7 +23,8 @@ install:
   # Stand up the instance
   - sudo salt-call --local --retcode-passthrough state.highstate
   - sudo salt-key -L
-  - ps aux
+  - ps aux|cat -
+  - cat /var/log/salt/minion
   - sudo salt-key -a lively
 
   # If anything bad happened on restarting the minion,
