@@ -5,6 +5,7 @@ ssl-cert:
   file.serialize:
     - formatter: yaml
     - dataset:
+        log_level: debug
         interface: 127.0.0.1
         open_mode: true
         auto_accept: true
