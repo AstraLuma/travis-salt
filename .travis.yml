@@ -38,5 +38,5 @@ install:
 
 script:
   # TODO: Fill in your actual test suite
-  - sudo salt-run --retcode-passthrough salt.cmd test.versions_report
-  - sudo salt --retcode-passthrough '*' test.versions_report
+  - sudo salt-run salt.cmd test.versions_report
+  - sudo salt '*' test.versions_report
