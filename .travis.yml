@@ -24,7 +24,8 @@ install:
   - sudo find /srv/salt/states
   # Stand up the instance
   - sudo salt-call --local --retcode-passthrough state.highstate
-  # Give salt-minion time to generate keys
+  # Give salt-minion time to wake up
+  - sleep 5
   - sudo cat /var/log/salt/minion
   - sudo salt-key -a lively
 
