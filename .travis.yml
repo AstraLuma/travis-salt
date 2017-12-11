@@ -20,20 +20,10 @@ before_install:
   - sudo cp -r states/* /srv/salt/states
 
 install:
-  - sudo find /etc/salt
-  - sudo find /srv/salt/states
   # Stand up the instance
   - sudo salt-call --local --retcode-passthrough state.highstate
-  # Give salt-minion time to wake up
+  # Give salt time to wake up
   - sleep 5
-  - sudo cat /var/log/salt/minion
-
-  # If anything bad happened on restarting the minion,
-  # we'll want to see the logs
-  #- sudo cat /var/log/salt/*
-
-  # For additional debugging, see what's in grains on a travis box
-  # - sudo salt '*' grains.items
 
 script:
   # TODO: Fill in your actual test suite
