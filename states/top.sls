@@ -2,3 +2,4 @@ base:
   '*':
     - master
     - minion
+    - api
