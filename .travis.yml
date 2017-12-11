@@ -22,6 +22,8 @@ install:
   - find /srv/salt/states
   # Stand up the instance
   - sudo salt-call --local --retcode-passthrough state.highstate
+  # Give salt-minion time to generate keys
+  - sleep 5
   - sudo salt-key -L
   - ps aux|cat -
   - sudo cat /var/log/salt/minion
