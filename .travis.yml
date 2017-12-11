@@ -17,8 +17,9 @@ before_install:
   # Install salt minion for local use
   - curl -L http://bootstrap.saltstack.org | sudo sh -s -- -M -X $SALTVERSION
   # Set up our installation bits
-  - sudo cp minion.bootstrap /etc/salt/minion
   - sudo mkdir -p /srv/salt/states
+  # TODO: Adjust these paths to match your project.
+  - sudo cp minion.bootstrap /etc/salt/minion
   - sudo cp -r states/* /srv/salt/states
 
 install:
