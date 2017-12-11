@@ -20,6 +20,7 @@ before_install:
   - sudo cp -r states/* /srv/salt/states
 
 install:
+  - find /etc/salt
   - find /srv/salt/states
   # Stand up the instance
   - sudo salt-call --local --retcode-passthrough saltutil.wheel key.gen_keys keyname=lively
