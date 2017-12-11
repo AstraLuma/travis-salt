@@ -10,3 +10,5 @@ salt-api:
   pkg.installed: []
   service.running:
     - enable: true
+    - watch:
+      - file: /etc/salt/master
