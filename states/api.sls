@@ -8,4 +8,4 @@ cherrypy:
 
 salt-api:
   service.running:
-    - enabled: true
+    - enable: true
