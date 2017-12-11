@@ -22,6 +22,7 @@ before_install:
 install:
   - find /srv/salt/states
   # Stand up the instance
+  - sudo salt-call --local --retcode-passthrough saltutil.wheel key.gen_keys keyname=lively
   - sudo salt-call --local --retcode-passthrough state.highstate
   # Give salt-minion time to generate keys
   - sleep 5
