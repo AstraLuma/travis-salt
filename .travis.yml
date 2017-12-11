@@ -6,13 +6,14 @@ python:
 - '3.6'
 
 env:
-- SALTVERSION=2016.11
-- SALTVERSION=2017.7
+- SALTVERSION=stable 2016.11
+- SALTVERSION=stable 2017.7
+- SALTVERSION=git
 
 before_install:
   - sudo apt-get update
   # Install salt minion for local use
-  - curl -L http://bootstrap.saltstack.org | sudo sh -s -- -M -X stable $SALTVERSION
+  - curl -L http://bootstrap.saltstack.org | sudo sh -s -- -M -X $SALTVERSION
   # Set up our installation bits
   - sudo cp minion.bootstrap /etc/salt/minion
   - sudo mkdir -p /srv/salt/states
