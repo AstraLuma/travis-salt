@@ -2,3 +2,4 @@ base:
   '*':
     - test
     - master
+    - minion
