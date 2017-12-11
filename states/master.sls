@@ -1,10 +1,13 @@
 ssl-cert:
   pkg.installed
 
-/etc/salt/master.d/travis.conf:
+/etc/salt/master:
   file.serialize:
     - formatter: yaml
     - dataset:
+        interface: 127.0.0.1
+        open_mode: true
+        auto_accept: true
         file_roots:
           base:
             - /srv/salt/stack
