@@ -27,7 +27,6 @@ install:
   # Give salt-minion time to wake up
   - sleep 5
   - sudo cat /var/log/salt/minion
-  - sudo salt-key -a lively
 
   # If anything bad happened on restarting the minion,
   # we'll want to see the logs
