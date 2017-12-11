@@ -7,5 +7,6 @@ cherrypy:
       - pkg: python-pip
 
 salt-api:
+  pkg.installed: []
   service.running:
     - enable: true

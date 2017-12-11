@@ -25,6 +25,7 @@ ssl-cert:
               - '@jobs'
 
 salt-master:
+  pkg.installed: []
   service.running:
     - enable: True
     - watch:
