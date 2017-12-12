@@ -32,6 +32,7 @@ install:
   - sudo cat /var/log/salt/minion
   - sudo cat /var/log/salt/api
   - sudo netstat -ltp
+  - sudo lsof -p$( cat /var/run/salt-api.pid )
 
 script:
   # TODO: Fill in your actual test suite
